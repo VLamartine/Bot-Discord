@@ -13,10 +13,10 @@ module.exports = {
         const server = interaction.guild;
         const mutedUserOption = interaction.options.getUser('user')
 
-        // if (user.id === mutedUserOption.id) {
-        //     await interaction.reply('Você está realmente tentando se desmutar?');
-        //     return
-        // }
+        if (user.id === mutedUserOption.id) {
+            await interaction.reply('Você está realmente tentando se desmutar?');
+            return
+        }
 
         const mutedUser = await MutedUser.findOne({
             where: {
