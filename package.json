@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/index.js",
-    "deployCommands": "node ./src/deployCommands.js"
+    "deployCommands": "node ./src/deployCommands.js",
+    "start:bot": "pm2 start ./src/index.js",
+    "stop:bot": "pm2 stop index"
   },
   "keywords": [],
   "author": "",
