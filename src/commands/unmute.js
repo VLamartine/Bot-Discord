@@ -32,6 +32,7 @@ module.exports = {
 
 
         try {
+            mutedUser.destroy();
             const member = await server.members.fetch(mutedUser.discordId);
             await member.voice.setMute(false);
         } catch (e) {
@@ -39,7 +40,6 @@ module.exports = {
             return;
         }
 
-        mutedUser.destroy();
 
 
         await interaction.reply(`Que ${mutedUser.discordName} aprenda a ficar quieto`);
