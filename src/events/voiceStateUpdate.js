@@ -3,9 +3,14 @@ const MutedUser = require('../models/mutedUser');
 
 module.exports = {
     name: Events.VoiceStateUpdate,
-    async execute(_oldState, newState) {
+    async execute(oldState, newState) {
         const server = newState.guild;
         const client = newState.client;
+
+        if (oldState.channelId && !newState.channelId) {
+            return;
+        }
+
         const mutedUser = await MutedUser.findOne({
             where: {
                 serverId: server.id,

@@ -1,30 +1,25 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-const User = sequelize.define('user', {
+const Language = sequelize.define('language', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    serverId: {
+    name: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: 'server_id'
+        field: 'language'
     },
-    discordId: {
+    spokenBy: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: 'discord_id'
-    },
-    discordName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        field: 'discord_name',
-    },
+        field: 'spoken_by'
+    }
 }, {
     underscored: true
 })
 
-module.exports = User;
+module.exports = Language;

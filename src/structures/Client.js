@@ -41,6 +41,10 @@ class ExtendedClient extends Client {
             }
         }
     }
+
+    setActivity() {
+        console.log(this.user);
+    }
 }
 
 module.exports = ExtendedClient;
